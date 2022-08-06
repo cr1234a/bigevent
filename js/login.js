@@ -42,7 +42,11 @@ window.addEventListener('DOMContentLoaded', function () {
             success: function (res) {
                 if (res.status === 0) {
                     layer.msg('注册成功');
-                    login_register.click()
+                    setTimeout(function () {
+                        login_register.click()
+                    }, 1000)
+                } else {
+                    layer.msg(res.message)
                 }
             }
         })
@@ -61,7 +65,10 @@ window.addEventListener('DOMContentLoaded', function () {
                 }
                 localStorage.setItem('token', res.token)
                 layer.msg('登录成功');
-                location.href = '/index.html'
+                setTimeout(function () {
+                    location.href = '/index.html'
+                }, 1000)
+
             }
         })
     })

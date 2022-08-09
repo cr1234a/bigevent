@@ -26,7 +26,10 @@ window.addEventListener('DOMContentLoaded', function () {
             if (value !== register_box.querySelector('.login_password').value) {
                 return "两次输入的密码不一致"
             }
-        }
+        },
+        // 注册框
+        login: [/^[\u4e00-\u9fa5a-zA-Z0-9]{3,5}$/,
+            '用户名只能包含中文、字母或数字3到5个']
     })
     // 注册请求
     let layer = layui.layer;
@@ -52,6 +55,7 @@ window.addEventListener('DOMContentLoaded', function () {
         })
     })
     // 登录请求 
+
     $('.login_box').on('submit', function (e) {
         e.preventDefault()
         let fd = $('.login_box').serialize()
@@ -60,15 +64,14 @@ window.addEventListener('DOMContentLoaded', function () {
             url: "/api/login",
             data: fd,
             success: function (res) {
-                if (res.status == 1) {
-                    return layer.msg('登录失败');
+                if (res.status !== 0) {
+                    return layer.msg(res.message);
                 }
                 localStorage.setItem('token', res.token)
                 layer.msg('登录成功');
                 setTimeout(function () {
                     location.href = '/index.html'
                 }, 1000)
-
             }
         })
     })

@@ -1,0 +1,46 @@
+.layui-icon-more-vertical::before {
+    content: ''
+}
+
+.layui-icon,
+.iconfont {
+    margin-right: 8px;
+}
+
+.layui_list .layui-icon,
+.layui_list .iconfont {
+    margin-left: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.layui-body {
+    overflow: hidden;
+}
+
+.index-use {
+    font-size: 12px !important;
+    border-bottom: 1px solid black;
+    user-select: none;
+}
+
+.user-newimage,
+.user-newimage1 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #009688;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 8px;
+
+}
+
+.user_image {
+    width: 30px;
+    height: 30px;
+}

@@ -6,10 +6,103 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 导入layuicss样式 -->
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <!-- 导入自己的css文件 -->
+    <link rel="stylesheet" href="/css/index.css">
+    <!-- 导入字体图标 -->
+    <link rel="stylesheet" href="/assets/fonts/iconfont.css">
+    <!-- 引入jq -->
+    <script src="/assets/lib/jquery.js"></script>
+    <!-- 导入url拼接js -->
+    <script src="./js/url.js"></script>
+
 </head>
 
 <body>
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo layui-hide-xs layui-bg-black index-use">
+                <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"
+                    class="layui-nav-img user_image">
+                <span class="user-newimage">A</span>
+                欢迎您： <span class="user-name"></span>
+            </div>
+            <!-- 头部区域（可配合layui 已有的水平导航） -->
+            <ul class="layui-nav layui-layout-left">
+                <li><img src="/assets/images/logo.png" alt=""></li>
+            </ul>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+                    <a href="javascript:;">
+                        <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"
+                            class="layui-nav-img  user_image1">
+                        <span class="user-newimage1">A</span>
+                        个人中心
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/use-html/use_information.html" target="fm"><i
+                                    class="layui-icon layui-icon-form"></i>基本资料</a></dd>
+                        <dd><a href="/use-html/user-image.html" target="fm"><span
+                                    class="iconfont icon-user"></span>更换头像</a></dd>
+                        <dd><a href="/use-html/user-repassword.html" target="fm"><i
+                                    class="layui-icon layui-icon-password"></i>重置密码</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+                    <a href="javascript:;" class="goout">
+                        <i class="layui-icon layui-icon-more-vertical"><span class="iconfont icon-tuichu"></span>退出</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item  layui-this"><a href="/home/dashboard.html" target="fm"><span
+                                class="iconfont icon-home"></span>首页</a>
+                    </li>
+                    <li class="layui-nav-item ">
+                        <a class="" href="javascript:;"><i class="layui-icon layui-icon-app"></i> 文章管理</a>
+                        <dl class="layui-nav-child layui_list">
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-tabs"></i>文章类别</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-date"></i>文章列表</a></dd>
+                            <dd><a href="javascript:;"><span class="iconfont icon-16"></span>发表文章</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;"><i class="layui-icon layui-icon-friends"></i>个人中心</a>
+
+                        <dl class="layui-nav-child layui_list">
+                            <dd><a href="/use-html/use_information.html" target="fm"><i
+                                        class="layui-icon layui-icon-form"></i>基本资料</a></dd>
+                            <dd><a href="/use-html/user-image.html" target="fm"><span
+                                        class="iconfont icon-user"></span>更换头像</a>
+                            </dd>
+                            <dd><a href="/use-html/user-repassword.html" target="fm"><i
+                                        class="layui-icon layui-icon-password"></i>重置密码</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <iframe src="/home/dashboard.html" name="fm" frameborder="0"></iframe>
+        </div>
+
+        <div class="layui-footer" style="text-align:center">
+            <!-- 底部固定区域 -->
+            escook ©2022 Created by 陈锐
+        </div>
+    </div>
+    <!-- 导入layui js样式 -->
+    <script src="/assets/lib/layui/layui.all.js"> </script>
+    <!-- 导入自己的js -->
+    <script src="/js/index.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 导入layuicss样式 -->
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <!-- 导入自己的css样式 -->
+    <link rel="stylesheet" href="/css/use_information.css">
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">基本资料</div>
+        <div class="layui-card-body">
+            <form class="layui-form" lay-filter="user—information">
+                <input type="text" name="id" style="display:none">
+                <div class="layui-form-item">
+                    <label class="layui-form-label ">登录名称:</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                            autocomplete="off" class="layui-input use-name">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户昵称:</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="nickname" required lay-verify="required|login" placeholder="请输入用户昵称"
+                            autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户邮箱:</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="email" required lay-verify="required|email" placeholder="请输入用户邮箱"
+                            autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <button lay-submit class="layui-btn layui-btn-normal">提交修改</button>
+                <button type="button" class="layui-btn layui-btn-sms reset">重置</button>
+            </form>
+        </div>
+    </div>
+    <!-- 导入layui js样式 -->
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <!-- 导入jq -->
+    <script src="/assets/lib/jquery.js"></script>
+    <!-- 导入拼接模板 -->
+    <script src="/js/url.js"></script>
+    <!-- 导入自己的js -->
+    <script src="/js/use-information.js"></script>
+</body>
+
+</html>

@@ -11,10 +11,10 @@ function getMessage() {
             if (res.status != 0) {
                 return layer.msg('获取用户信息失败');
             }
-            console.log(res)
-            let usename = res.data.nickname || res.data.name
             // 获取名字或者昵称并渲染
+            let usename = res.data.nickname || res.data.username
             document.querySelector('.user-name').innerHTML = usename
+
             // 获取用户头像并渲染
             if (res.data.user_pic === null) {
                 let head_image = usename.toUpperCase()[0]

@@ -34,12 +34,12 @@ window.addEventListener('load', function () {
     $('.sure').on('click', function () {
         // 将图片转化为base64格式
         let dataURL = $image
-            // 创建一个 Canvas 画布
+            // 创建一个Canvas画布
             .cropper('getCroppedCanvas', {
                 width: 100,
                 height: 100
             })
-            // 将 Canvas 画布上的内容，转化为 base64 格式的字符串
+            // 将Canvas画布上的内容，转化为 base64 格式的字符串
             .toDataURL('image/png')
         $.ajax({
             method: 'post',

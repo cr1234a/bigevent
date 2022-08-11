@@ -42,7 +42,6 @@ window.addEventListener('click', function () {
                 layer.msg('修改密码成功')
                 // 重置表单
                 document.querySelector('.layui-form').reset()
-
             }
         })
     })

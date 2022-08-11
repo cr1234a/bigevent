@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 导入layuicss样式 -->
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <!-- 导入自己的css样式 -->
+    <link rel="stylesheet" href="/css/article-category.css">
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <span>文章类别管理</span>
+            <button type="button" class="layui-btn layui-btn-normal layui-btn-sm add">添加分类</button>
+        </div>
+        <div class="layui-card-body">
+            <table class="layui-table">
+                <colgroup>
+                    <col width="150">
+                    <col width="200">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>分类名称</th>
+                        <th>分类别名</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 定义获取文章分类模板 -->
+    <script type="text/html" id="article-kind">
+        {{each data}}
+        <tr>
+            <td>{{$value.name}}</td>
+            <td>{{$value.alias}}</td>
+            <td><span>
+                    <button type="button" class="layui-btn layui-btn-normal  layui-btn-xs correct" data-add={{$value.Id}}>修改</button>
+                </span>
+                <span class="span1"><button type="button"
+                        class="layui-btn    layui-btn-danger  layui-btn-xs remove" data-del={{$value.Id}}>删除</button></span>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <!-- 定义添加图书弹窗模板 -->
+    <script type="text/html" id="pop-up_window">
+        <form class="layui-form form" id="id-form">
+            <div class="layui-form-item">
+              <label class="layui-form-label">分类名称:</label>
+              <div class="layui-input-block">
+                <input type="text" name="name" required  lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类别名:</label>
+                <div class="layui-input-block">
+                  <input type="text" name="alias" required  lay-verify="required" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item but">
+                <div class="layui-input-block">
+                  <button class="layui-btn" id="ok" lay-submit lay-filter="formDemo">确定</button>
+                  <button type="reset" class="layui-btn layui-btn-primary" >重置</button>
+                </div>
+            </div>
+        </form>
+    </script>
+    <!-- 定义修改图书弹窗模板 -->
+    <script type="text/html" id="pop-up_window1">
+        <form class="layui-form form" id="Id-form" lay-filter="Form">
+            <input type="text" name="Id" style="display: none;">
+            <div class="layui-form-item">
+              <label class="layui-form-label">分类名称:</label>
+              <div class="layui-input-block">
+                <input type="text" name="name" required  lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input uname">
+              </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类别名:</label>
+                <div class="layui-input-block">
+                  <input type="text" name="alias" required  lay-verify="required" placeholder="请输入分类别名" autocomplete="off" class="layui-input nname">
+                </div>
+            </div>
+            <div class="layui-form-item but">
+                <div class="layui-input-block">
+                  <button class="layui-btn" id="OK3" lay-submit lay-filter="formDemo">确定</button>
+                  <button type="button" class="layui-btn layui-btn-primary" id="reset">重置</button>
+                </div>
+            </div>
+        </form>
+    </script>
+    <!-- 导入layui js样式 -->
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <!-- 导入jq -->
+    <script src="/assets/lib/jquery.js"></script>
+    <!-- 导入拼接模板 -->
+    <script src="/js/url.js"></script>
+    <!-- 导入自己的js -->
+    <script src="/js/article-category.js"></script>
+    <!-- 导入模板引擎 -->
+    <script src="/assets/lib/template-web.js"></script>
+</body>
+
+</html>
